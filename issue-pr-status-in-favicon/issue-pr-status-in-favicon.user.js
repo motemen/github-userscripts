@@ -3,6 +3,7 @@
 // @namespace http://motemen.github.io/
 // @match     https://github.com/*
 // ==/UserScript==
+
 (function () {
 
 function $$ (selector) {
@@ -18,8 +19,8 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 function update() {
   var buildStatusColor = (function () {
-    // .timeline-commits .commit-meta .status
-    var elem = $$('.build-status-description')[0];
+    var elems = $$('.timeline-commits .commit-meta .status');
+    var elem = elems[elems.length - 1];
     if (!elem) return null;
     return getComputedStyle(elem).color;
   })();
