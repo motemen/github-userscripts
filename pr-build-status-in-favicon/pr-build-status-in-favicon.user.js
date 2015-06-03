@@ -19,7 +19,7 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 function update() {
   var buildStatusColor = (function () {
-    var elems = $$('.timeline-commits .commit-meta .status');
+    var elems = $$('.branch-status .octicon');
     var elem = elems[elems.length - 1];
     if (!elem) return null;
     return getComputedStyle(elem).color;
